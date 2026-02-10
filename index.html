@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Monitor | 市场情报</title>
+    <style>
+        /* 全局变量 */
+        :root { --bg: #f4f6f8; --text-main: #2c3e50; --text-sub: #7f8c8d; --card-bg: #ffffff; --line-color: #e0e0e0; --accent: #ff6600; --shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        @media (prefers-color-scheme: dark) { :root { --bg: #121212; --text-main: #e0e0e0; --text-sub: #a0a0a0; --card-bg: #1e1e1e; --line-color: #333; --shadow: 0 4px 6px rgba(0,0,0,0.3); } }
+        
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding: 0; line-height: 1.6; }
+        
+        /* 顶部导航 */
+        .header { background: var(--card-bg); padding: 15px 20px; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow); border-bottom: 2px solid var(--accent); display: flex; align-items: center; justify-content: space-between; }
+        .header h1 { margin: 0; font-size: 1.2rem; font-weight: 800; }
+        .header .status { font-size: 0.8rem; color: var(--accent); font-weight: bold; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
+        
+        /* 时间轴 */
+        .timeline { position: relative; padding-left: 0; }
+        .timeline::before { content: ''; position: absolute; left: 65px; top: 0; bottom: 0; width: 2px; background: var(--line-color); }
+        
+        /* 新闻块 */
+        .timeline-item { position: relative; margin-bottom: 30px; display: flex; align-items: flex-start; }
+        
+        /* 时间标签 */
+        .time-box { width: 55px; text-align: right; margin-right: 25px; flex-shrink: 0; }
+        .time-hm { font-size: 1.1rem; font-weight: 800; color: var(--text-main); line-height: 1; }
+        .time-ymd { font-size: 0.7rem; color: var(--text-sub); margin-top: 4px; }
+        
+        /* 圆点 */
+        .dot { position: absolute; left: 61px; top: 6px; width: 10px; height: 10px; background: var(--bg); border: 2px solid var(--accent); border-radius: 50%; z-index: 1; }
+        
+        /* 卡片 */
+        .content-card { flex: 1; background: var(--card-bg); padding: 16px; border-radius: 8px; box-shadow: var(--shadow); text-decoration: none; color: inherit; display: block; border-left: 3px solid transparent; transition: all 0.2s; }
+        .content-card:hover { transform: translateY(-3px); border-left: 3px solid var(--accent); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        
+        .source-badge { display: inline-block; font-size: 0.75rem; padding: 3px 8px; border-radius: 4px; background: rgba(255, 102, 0, 0.1); color: var(--accent); font-weight: bold; margin-bottom: 8px; }
+        .news-title { font-size: 1.1rem; font-weight: 700; margin: 0 0 8px 0; line-height: 1.4; color: var(--text-main); }
+        .news-origin { font-size: 0.85rem; color: var(--text-sub); font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Global Market | Intelligence</h1>
+        <span class="status">● LIVE</span>
+    </div>
+    <div class="container">
+        <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/airbnb-taps-meta-ai-executive-as-new-chief-technology-officer" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">Airbnb 任命 Meta 生成人工智能主管为首席技术官</div>
+                <div class="news-origin">Airbnb Names Meta’s Head of Generative AI as Chief Technology Officer</div>
+            </a>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/robotics-startup-skild-valued-above-14-billion-after-softbank-led-funding-round" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">机器人初创公司 Skild AI 在新一轮融资中估值超过 140 亿美元</div>
+                <div class="news-origin">Robotics Startup Skild AI Valued Above $14 Billion in New Funding Round</div>
+            </a>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/airbnb-hires-former-meta-exec-as-new-cto-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">Airbnb 聘请前 Meta 高管担任新 CTO，进军人工智能领域</div>
+                <div class="news-origin">Airbnb Hires Former Meta Exec as New CTO as It Leans Into AI</div>
+            </a>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">20:51</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/14/meta-to-reportedly-lay-off-10-of-reality-labs-staff/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">据报道 Meta 将解雇 Reality Labs 10% 的员工</div>
+                <div class="news-origin">Meta to reportedly lay off 10% of Reality Labs staff</div>
+            </a>
+        </div>
+        
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:45</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-14/metals-rally-picks-up-momentum-to-start-2026" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">2026 年金属涨势强劲</div>
+                <div class="news-origin">Metals Rally Picks Up Momentum to Start 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:36</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/bloomberg-brief-1-14-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">彭博简报 2026 年 1 月 14 日（视频）</div>
+                <div class="news-origin">Bloomberg Brief 1/14/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:15</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/hsbc-is-said-to-consider-selling-singapore-insurance-business" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">汇丰银行考虑出售新加坡保险业务</div>
+                <div class="news-origin">HSBC Is Said to Consider Selling Singapore Insurance Business</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:26</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/wef-s-zahidi-on-biggest-risks-panning-out-in-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Wef 的扎希迪谈 2026 年将面临的最大风险</div>
+                <div class="news-origin">Wef’s Zahidi on Biggest Risks Panning Out in 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:26</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/china-says-it-s-probing-trip-com-over-alleged-antitrust-conduct" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">中国称正在调查携程网涉嫌反垄断行为</div>
+                <div class="news-origin">China Says It’s Probing Trip.com Over Alleged Antitrust Conduct</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:27</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/horizons-middle-east-africa-1-14-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中东和非洲地平线 2026 年 1 月 14 日（视频）</div>
+                <div class="news-origin">Horizons Middle East & Africa 1/14/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:22</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/tesla-driver-assist-system-fsd-will-switch-to-subscription-only-musk-says" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">马斯克表示，特斯拉驾驶辅助系统 FSD 将改为仅订阅模式</div>
+                <div class="news-origin">Tesla Driver-Assist System FSD Will Switch to Subscription-Only, Musk Says</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:17</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/kamrava-best-for-iran-protests-is-for-us-to-do-nothing-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">卡姆拉瓦：应对伊朗抗议最好的办法就是美国什么也不做</div>
+                <div class="news-origin">Kamrava: Best for Iran Protests is for US to Do Nothing</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:47</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/japan-s-five-year-bond-sale-demand-weaker-than-12-month-average" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">日本五年期债券发行需求弱于 12 个月平均水平</div>
+                <div class="news-origin">Japan’s Five-Year Bond Sale Demand Weaker Than 12-Month Average</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:46</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-14/top-indonesian-herbal-medicine-firm-sido-muncul-mulls-stake-sale" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">印尼顶级草药公司 Sido Muncul 考虑出售股份</div>
+                <div class="news-origin">Top Indonesian Herbal Medicine Firm Sido Muncul Mulls Stake Sale</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:15</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3638639464385924?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">复旦教授联手前英特尔首席科学家创业，获天使轮追加投资，已与小米、宇树科技合作｜36氪首发</div>
+                <div class="news-origin">复旦教授联手前英特尔首席科学家创业，获天使轮追加投资，已与小米、宇树科技合作｜36氪首发</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:13</div>
+                <div class="time-ymd">01-14</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-14/ubs-peng-on-china-s-consumer-sector-outlook-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">瑞银 (UBS) 彭畅谈中国消费行业前景</div>
+                <div class="news-origin">UBS’ Peng on China’s Consumer Sector Outlook</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/13/slackbot-is-an-ai-agent-now/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">Slackbot 现在是人工智能代理</div>
+                <div class="news-origin">Slackbot is an AI agent now</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">20:54</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-13/david-webb-hong-kong-s-most-vocal-activist-investor-dies-at-60" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">香港最具声望的激进投资者 David Webb 去世，享年 60 岁</div>
+                <div class="news-origin">David Webb, Hong Kong’s Most Vocal Activist Investor, Dies at 60</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">20:51</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-13/europe-s-gas-and-power-hedge-funds-set-to-cash-in-from-round-the-clock-trading" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">欧洲天然气和电力对冲基金即将获利</div>
+                <div class="news-origin">Europe’s Gas and Power Hedge Funds Are Set to Cash In</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:35</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-13/bny-mellon-profit-beats-estimates-on-fee-gains-interest-income" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">纽约梅隆银行的费用收益和利息收入利润超出预期</div>
+                <div class="news-origin">BNY Mellon Profit Beats Estimates on Fee Gains, Interest Income</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:33</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-13/bloomberg-brief-1-13-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">彭博简报 2026 年 1 月 13 日（视频）</div>
+                <div class="news-origin">Bloomberg Brief 1/13/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:17</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://cn.investing.com/news/forex-news/article-93CH-3162893" target="_blank" class="content-card">
+                <span class="source-badge">外汇资讯</span>
+                <div class="news-title">中国央行或将随人民币走强逆转外汇措施</div>
+                <div class="news-origin">中国央行或将随人民币走强逆转外汇措施</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:27</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-13/maersk-makes-another-voyage-through-red-sea-in-test-of-safety" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">马士基再次穿越红海以测试安全</div>
+                <div class="news-origin">Maersk Makes Another Voyage Through Red Sea in Test of Safety</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:23</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-13/mag-seven-outperformance-story-not-over-morgan-stanley-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">第七期表现出色的故事尚未结束：摩根士丹利</div>
+                <div class="news-origin">Mag Seven Outperformance Story Not Over: Morgan Stanley</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:28</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-13/bitcoins-als-kreditabsicherung-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">比特币作为贷款担保</div>
+                <div class="news-origin">Bitcoins als Kreditabsicherung</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:24</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3637524364887305?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">最前线｜智能座舱开始AI变革，长城新车要标配车端智能体</div>
+                <div class="news-origin">最前线｜智能座舱开始AI变革，长城新车要标配车端智能体</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:34</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-13/stock-market-stands-on-side-of-history-if-japan-elections-called" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">如果日本大选来临，股市将站在历史一边</div>
+                <div class="news-origin">Stock Market Stands on Side of History If Japan Elections Called</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:26</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-13/china-s-2026-stock-rally-builds-as-turnover-margin-loans-surge" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">随着成交量和保证金贷款激增，中国股市 2026 年将迎来上涨</div>
+                <div class="news-origin">China’s 2026 Stock Rally Builds as Turnover, Margin Loans Surge</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:16</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-13/the-china-show-1-13-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中国展 2026 年 1 月 13 日（视频）</div>
+                <div class="news-origin">The China Show 1/13/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:36</div>
+                <div class="time-ymd">01-13</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-13/baidu-cfo-on-business-strategy-ai-investments-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">百度首席财务官谈商业战略、人工智能投资</div>
+                <div class="news-origin">Baidu CFO on Business Strategy, AI Investments</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:13</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-12/the-sell-america-trade-is-back-as-us-targets-fed-chair" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">随着美国瞄准美联储主席，“推销美国”贸易又回来了</div>
+                <div class="news-origin">The Sell America Trade Is Back as US Targets Fed Chair</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:35</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-12/focus-on-fed-divions-not-independence-3-minute-mliv-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">关注美联储部门，而不是独立性：3 分钟 MLIV</div>
+                <div class="news-origin">Focus on Fed Divions, Not Independence: 3-Minute MLIV</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:28</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/deepseek-founder-liang-s-funds-surge-57-as-china-quants-boom" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">随着中国量化投资的繁荣，DeepSeek创始人梁的基金飙升57%</div>
+                <div class="news-origin">DeepSeek Founder Liang’s Funds Surge 57% as China Quants Boom</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:32</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3636039220151305?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">狂飙的中国IP，掏空全球年轻人钱包丨36氪年度回眸</div>
+                <div class="news-origin">狂飙的中国IP，掏空全球年轻人钱包丨36氪年度回眸</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:49</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3636077116949511?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">科氪 | 荣耀ROBOT PHONE亮相2026 CES，以颠覆性设计斩获多项顶级大奖</div>
+                <div class="news-origin">科氪 | 荣耀ROBOT PHONE亮相2026 CES，以颠覆性设计斩获多项顶级大奖</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:42</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/live-blog/2026-01-12/ftse-100-live-fed-powell-trump-dollar-pound-oil-gold-prices-what-s-moving-uk-markets-right-now-markets-today" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">美联储威胁打击美元，英镑小幅走高</div>
+                <div class="news-origin">Pound Edges Higher as Fed Threat Hits Dollar</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:01</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3635969762657287?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">实现卫星互联网“工业母机”交付，这家公司获超千万元天使轮融资｜硬氪首发</div>
+                <div class="news-origin">实现卫星互联网“工业母机”交付，这家公司获超千万元天使轮融资｜硬氪首发</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:00</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/nexperia-s-messy-wingtech-dispute-marks-breaking-point-in-chips-feud" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">欧洲和中国在芯片问题上的争执已达到临界点</div>
+                <div class="news-origin">Europe and China’s Feud Over Chips Is Reaching a Breaking Point</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:54</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/opinion/newsletters/2026-01-12/prosecuting-powell-would-be-a-new-low-with-no-upside" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">起诉鲍威尔将创下新低，没有任何好处</div>
+                <div class="news-origin">Prosecuting Powell Would Be a New Low With No Upside</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:53</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-12/hsbc-opens-asset-mgmt-branch-in-uae-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">汇丰银行在阿联酋开设资产管理分行</div>
+                <div class="news-origin">HSBC Opens Asset Mgmt Branch in UAE</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:53</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/hd-hyundai-robotics-hires-banks-for-south-korea-ipo" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">HD 现代机器人聘请银行进行韩国 IPO</div>
+                <div class="news-origin">HD Hyundai Robotics Hires Banks for South Korea IPO</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:53</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/hd-hyundai-robotics-hires-banks-for-south-korea-ipo" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">HD 现代机器人聘请银行进行韩国 IPO</div>
+                <div class="news-origin">HD Hyundai Robotics Hires Banks for South Korea IPO</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:52</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-12/china-s-haisco-eyes-partnerships-for-global-growth-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中国海斯科着眼于全球增长的合作伙伴关系</div>
+                <div class="news-origin">China's Haisco Eyes Partnerships For Global Growth</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:55</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/radiant-unloads-bhp-iron-ore-in-china-as-trader-tests-curbs" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Radiant在中国卸载必和必拓铁矿石，贸易商测试限制</div>
+                <div class="news-origin">Radiant Unloads BHP Iron Ore in China as Trader Tests Curbs</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:54</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/iron-ore-gains-as-restocking-hot-metal-output-lifts-sentiment" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">铁矿石价格因补充库存而上涨，铁水产量提振市场情绪</div>
+                <div class="news-origin">Iron Ore Gains as Restocking, Hot-Metal Output Lifts Sentiment</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:11</div>
+                <div class="time-ymd">01-12</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-12/china-vanke-faces-next-test-as-debt-default-pressure-builds" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">债务违约压力加大 万科面临下一个考验</div>
+                <div class="news-origin">China Vanke Faces Next Test as Debt Default Pressure Builds</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:30</div>
+                <div class="time-ymd">01-11</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-11/greggs-tests-limit-of-britain-s-appetite-for-its-sausage-rolls" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">格雷格斯测试英国人对香肠卷的胃口极限</div>
+                <div class="news-origin">Greggs Tests Limit of Britain’s Appetite for Its Sausage Rolls</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:18</div>
+                <div class="time-ymd">01-11</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3634689952629764?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">从破产边缘到百亿市值，东北网红家族的“高端”之路</div>
+                <div class="news-origin">从破产边缘到百亿市值，东北网红家族的“高端”之路</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:15</div>
+                <div class="time-ymd">01-11</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3634686937859074?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">250亿美金服饰巨头，卷入夺权大战</div>
+                <div class="news-origin">250亿美金服饰巨头，卷入夺权大战</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:12</div>
+                <div class="time-ymd">01-11</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3634683932312833?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">米哈游投资的卡牌公司要上市了</div>
+                <div class="news-origin">米哈游投资的卡牌公司要上市了</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:26</div>
+                <div class="time-ymd">01-10</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3633518419428361?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">航发团队攻坚半导体真空设备，多款产品性能对标国际标杆，完成数千万天使轮融资｜硬氪首发</div>
+                <div class="news-origin">航发团队攻坚半导体真空设备，多款产品性能对标国际标杆，完成数千万天使轮融资｜硬氪首发</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:34</div>
+                <div class="time-ymd">01-10</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-10/elon-musk-s-grok-ai-blocked-in-indonesia-over-sexualized-content" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">埃隆·马斯克 (Elon Musk) 的 Grok AI 因色情内容在印度尼西亚被屏蔽</div>
+                <div class="news-origin">Elon Musk’s Grok AI Blocked in Indonesia Over Sexualized Content</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:30</div>
+                <div class="time-ymd">01-10</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-10/troubled-world-heralds-next-stage-of-the-defense-stocks-rally" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">陷入困境的世界预示着国防股反弹的下一阶段</div>
+                <div class="news-origin">Troubled World Heralds Next Stage of the Defense Stocks Rally</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/09/the-venture-firm-that-ate-silicon-valley/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">吞噬硅谷的风险投资公司刚刚又筹集了 150 亿美元</div>
+                <div class="news-origin">The venture firm that ate Silicon Valley just raised another $15 billion</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:30</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/can-trump-lower-house-prices-by-taking-on-wall-street-investors" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">特朗普能否通过吸引华尔街买家来降低房价？</div>
+                <div class="news-origin">Can Trump Lower Home Prices by Taking On Wall Street Buyers?</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:16</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/inpost-catapulted-from-laggard-to-leader-after-takeover-proposal" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">收购提议后，InPost 从落后者跃升为领先者</div>
+                <div class="news-origin">InPost Catapulted From Laggard to Leader After Takeover Proposal</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:23</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/rio-tinto-said-to-be-open-to-owning-coal-if-it-buys-glencore" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">据称，如果力拓收购嘉能可，则愿意拥有煤炭</div>
+                <div class="news-origin">Rio Tinto Said to Be Open to Owning Coal If It Buys Glencore</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:34</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-09/music-problems-amplified-by-ai-audioshake-ceo-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">AudioShake 首席执行官：人工智能加剧了音乐问题</div>
+                <div class="news-origin">Music Problems Amplified by AI: AudioShake CEO</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:27</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/vodafone-idea-is-said-to-consider-raising-debt-to-boost-growth" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">据说沃达丰创意正在考虑举债以促进增长</div>
+                <div class="news-origin">Vodafone Idea Is Said to Consider Raising Debt to Boost Growth</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:25</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3631859469305096?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">最前线｜吉利发布全域AI2.0架构和世界行为模型，“1-2周可迭代一次”</div>
+                <div class="news-origin">最前线｜吉利发布全域AI2.0架构和世界行为模型，“1-2周可迭代一次”</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:23</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/copper-pushes-higher-with-metals-set-for-fourth-weekly-advance" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">铜价推高，金属将连续第四周上涨</div>
+                <div class="news-origin">Copper Pushes Higher With Metals Set for Fourth Weekly Advance</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:21</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/sainsbury-s-christmas-sales-disappoint-as-uk-retail-struggles" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">英国零售业陷入困境，塞恩斯伯里圣诞销售令人失望</div>
+                <div class="news-origin">Sainsbury’s Christmas Sales Disappoint as UK Retail Struggles</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:16</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/german-production-unexpectedly-rises-on-pickup-in-auto-output" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">德国产量因汽车产量回升而意外增长</div>
+                <div class="news-origin">German Production Unexpectedly Rises on Pickup in Auto Output</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:16</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-09/german-production-unexpectedly-rises-on-pickup-in-auto-output" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">德国产量因汽车产量回升而意外增长</div>
+                <div class="news-origin">German Production Unexpectedly Rises on Pickup in Auto Output</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:31</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-09/india-s-7-4-growth-strong-signal-or-misleading-headline" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">印度7.4%的增长：强烈信号还是误导性标题？</div>
+                <div class="news-origin">India’s 7.4% Growth: Strong Signal or Misleading Headline?</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:35</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-09/the-china-show-1-9-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中国展 2026 年 1 月 9 日（视频）</div>
+                <div class="news-origin">The China Show 1/9/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:12</div>
+                <div class="time-ymd">01-09</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3630475057972482?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">脑机接口虚火？但再不下手就晚了</div>
+                <div class="news-origin">脑机接口虚火？但再不下手就晚了</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/08/former-bolt-ceo-maju-kuruvillas-startup-triples-to-100m-valuation/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">Bolt 前首席执行官 Maju Kuruvilla 的初创公司估值翻了三倍，达到 1 亿美元</div>
+                <div class="news-origin">Former Bolt CEO Maju Kuruvilla’s startup triples to $100M valuation</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:45</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3630704371516675?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">氪星晚报 ｜汇源集团宣称重新接管汇源品牌；雷军：规划未来五年再投2000亿元；高盛：美国2030年将面临电力危机</div>
+                <div class="news-origin">氪星晚报 ｜汇源集团宣称重新接管汇源品牌；雷军：规划未来五年再投2000亿元；高盛：美国2030年将面临电力危机</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:41</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-08/bloomberg-brief-1-8-2026-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">彭博简报 2026 年 1 月 8 日（视频）</div>
+                <div class="news-origin">Bloomberg Brief 1/8/2026 (Video)</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:23</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-08/the-jawboner-in-chief-is-back-and-moving-markets" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Jawboner 领袖回归并改变市场</div>
+                <div class="news-origin">The Jawboner in Chief Is Back and Moving Markets</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:23</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-08/china-to-approve-nvidia-h200-purchases-as-soon-as-this-quarter" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">中国最快本季度将批准 Nvidia H200 采购</div>
+                <div class="news-origin">China to Approve Nvidia H200 Purchases as Soon as This Quarter</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:18</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-08/tesco-sees-profit-at-high-end-of-forecast-on-holiday-sales-gain" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">特易购预计假期销售利润将达到预测的上限</div>
+                <div class="news-origin">Tesco Sees Profit at High End of Forecast on Holiday Sales Gain</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:18</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-08/sweden-s-steady-inflation-leaves-case-for-riksbank-pause-intact" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">瑞典稳定的通胀使得瑞典央行暂停行动的理由完好无损</div>
+                <div class="news-origin">Sweden’s Steady Inflation Leaves Case for Riksbank Pause Intact</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:31</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/07/jpmorgan-chase-becomes-the-new-issuer-of-the-apple-card/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">摩根大通成为 Apple Card 新发行人</div>
+                <div class="news-origin">JPMorgan Chase becomes the new issuer of the Apple Card</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:33</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-08/australian-bonds-rally-on-dovish-rate-outlook-treasuries-rise" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">鸽派利率前景推动澳大利亚债券上涨，国债上涨</div>
+                <div class="news-origin">Australian Bonds Rally on Dovish Rate Outlook, Treasuries Rise</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:29</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/opinion/newsletters/2026-01-08/k-now-means-kicking-private-equity-out-of-the-house" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">K现在意味着将私募股权踢出家门</div>
+                <div class="news-origin">K Now Means Kicking Private Equity Out of the House</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:40</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-08/billionaire-hedge-fund-manager-michael-platt-invests-in-uk-biotech-firm-engitix" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">亿万富翁对冲基金经理 Michael Platt 投资英国生物技术公司 Engitix</div>
+                <div class="news-origin">Billionaire Hedge Fund Manager Michael Platt Invests in UK Biotech Firm Engitix</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:40</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-08/hyundai-motor-vp-on-future-of-robotics-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">现代汽车副总裁谈机器人技术的未来</div>
+                <div class="news-origin">Hyundai Motor VP on Future of Robotics</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:38</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-08/fed-independence-key-for-dollar-brainard-says-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">布雷纳德表示，美联储独立是美元的关键</div>
+                <div class="news-origin">Fed Independence Key for Dollar, Brainard Says</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:35</div>
+                <div class="time-ymd">01-08</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-08/insta360-co-founder-on-business-strategy-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Insta360 联合创始人谈商业战略</div>
+                <div class="news-origin">Insta360 Co-founder on Business Strategy</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-07/how-la-is-recovering-from-historic-wildfires-one-year-later" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">一年后，洛杉矶如何从历史性野火中恢复过来</div>
+                <div class="news-origin">How LA Is Recovering From Historic Wildfires One Year Later</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:23</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/stellantis-italy-car-output-fell-25-in-2025-union-says" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Union称Stellantis意大利2025年汽车产量下降25%</div>
+                <div class="news-origin">Stellantis Italy Car Output Fell 25% in 2025, Union Says</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:19</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/donation-from-century-old-fund-cuts-uk-debt-by-607-million" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">百年基金捐赠使英国债务减少 6.07 亿英镑</div>
+                <div class="news-origin">Donation From Century-Old Fund Cuts UK Debt by £607 Million</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:32</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/copper-price-record-how-supply-crunch-is-looming-just-as-ai-boom-hits" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">世界需要更多的铜。但供应充足吗？</div>
+                <div class="news-origin">The World Needs a Lot More Copper. But Will There Be Enough Supply?</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:30</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/hedge-fund-enko-flags-africa-risks-for-2026-after-dollar-linked-boom-year" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">对冲基金 Enko 指出，在与美元挂钩的繁荣年之后，2026 年非洲将面临风险</div>
+                <div class="news-origin">Hedge Fund Enko Flags Africa Risks for 2026 After Dollar-Linked Boom Year</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:29</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/bluescope-s-board-rejects-8-8-billion-steel-dynamics-sgh-bid" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">BlueScope董事会拒绝Steel Dynamics、SGH 88亿美元的收购要约</div>
+                <div class="news-origin">BlueScope’s Board Rejects $8.8 Billion Steel Dynamics, SGH Bid</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:18</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/diageo-distributor-asks-court-to-block-2-3-billion-asahi-deal" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">帝亚吉欧经销商请求法院阻止朝日集团 23 亿美元的交易</div>
+                <div class="news-origin">Diageo Distributor Asks Court to Block $2.3 Billion Asahi Deal</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:29</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3628862062347528?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">出海价值洼地：我在拉美一线看到的真实机会</div>
+                <div class="news-origin">出海价值洼地：我在拉美一线看到的真实机会</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:20</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/chevron-and-quantum-energy-to-bid-for-lukoil-assets-ft-says" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">英国《金融时报》称，雪佛龙和量子能源将竞购卢克石油公司资产</div>
+                <div class="news-origin">Chevron and Quantum Energy to Bid for Lukoil Assets, FT Says</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:36</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/china-targets-online-commerce-battles-in-latest-regulatory-salvo" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">中国最新监管举措瞄准电商战</div>
+                <div class="news-origin">China Targets Online Commerce Battles in Latest Regulatory Salvo</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:36</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-07/china-targets-online-commerce-battles-in-latest-regulatory-salvo" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中国最新监管举措瞄准电商战</div>
+                <div class="news-origin">China Targets Online Commerce Battles in Latest Regulatory Salvo</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:14</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-07/china-s-feud-with-japan-worsens-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">中国与日本的不和加剧</div>
+                <div class="news-origin">China’s Feud With Japan Worsens</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:07</div>
+                <div class="time-ymd">01-07</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3628717277758725?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">铲屎官养不活宠物医院</div>
+                <div class="news-origin">铲屎官养不活宠物医院</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">20:51</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3627939586999300?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">科氪 | CES 2026：ROG重磅发布幻系列全能笔记本新品及系列背包产品</div>
+                <div class="news-origin">科氪 | CES 2026：ROG重磅发布幻系列全能笔记本新品及系列背包产品</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:37</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-06/stock-bulls-dominate-in-survey-of-2026-sentiment" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">在 2026 年情绪调查中，股市多头占据主导地位</div>
+                <div class="news-origin">Stock Bulls Dominate in Survey of 2026 Sentiment</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:26</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-06/insurer-prudential-announces-1-2-billion-share-buyback-program" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">保德信保险公司宣布 12 亿美元的股票回购计划</div>
+                <div class="news-origin">Insurer Prudential Announces $1.2 Billion Share Buyback Program</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:20</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-06/next-lifts-profit-forecast-again-on-strong-holiday-season-sales" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Next 因假日季销售强劲而再次上调利润预测</div>
+                <div class="news-origin">Next Lifts Profit Forecast Again on Strong Holiday Season Sales</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">15:18</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2026/01/05/narwal-adds-ai-to-its-vacuum-cleaners-to-monitor-pets-and-find-jewelry/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">Narwal 在其吸尘器中添加了人工智能，以监控宠物并寻找珠宝</div>
+                <div class="news-origin">Narwal adds AI to its vacuum cleaners to monitor pets and find jewelry</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:30</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3626190603568384?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">36氪首发 | 开源异构算力调度平台「密瓜智能」获复星创富数千万元投资，为企业提供高效灵活算力解决方案</div>
+                <div class="news-origin">36氪首发 | 开源异构算力调度平台「密瓜智能」获复星创富数千万元投资，为企业提供高效灵活算力解决方案</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:14</div>
+                <div class="time-ymd">01-06</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://cn.investing.com/news/stock-market-news/article-3151323" target="_blank" class="content-card">
+                <span class="source-badge">外汇资讯</span>
+                <div class="news-title">黄金飙升后另一面：美元在全球储备中的地位降至数十年来最低</div>
+                <div class="news-origin">黄金飙升后另一面：美元在全球储备中的地位降至数十年来最低</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:12</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-05/air-india-kicks-off-search-to-replace-ceo-amid-persistent-losses" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">印度航空因持续亏损而开始寻找首席执行官替换人选</div>
+                <div class="news-origin">Air India Kicks Off Search to Replace CEO Amid Persistent Losses</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:38</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-05/nakhle-oil-markets-stable-but-nervous-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Nakhle：石油市场稳定但紧张</div>
+                <div class="news-origin">Nakhle: Oil Markets Stable but Nervous</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:32</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-05/khansaheb-dubai-s-supply-of-new-homes-to-moderate-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">Khansaheb：迪拜新房供应量放缓</div>
+                <div class="news-origin">Khansaheb: Dubai’s Supply of New Homes to Moderate</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:29</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-05/us-to-drive-equities-in-2026-with-10-plus-gain-sheets-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">2026 年美国股市将上涨 10% 以上：表格</div>
+                <div class="news-origin">US to Drive Equities in 2026 With 10%-Plus Gain: Sheets</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:28</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-05/nvidia-partner-hon-hai-s-sales-beat-estimates-in-an-ai-boom" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">人工智能热潮中，英伟达合作伙伴鸿海的销售额超出预期</div>
+                <div class="news-origin">Nvidia Partner Hon Hai’s Sales Beat Estimates in an AI Boom</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:45</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-05/foreign-oil-claims-in-venezuela-in-doubt-after-us-intervention" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">美国干预后委内瑞拉的外国石油索赔受到质疑</div>
+                <div class="news-origin">Foreign Oil Claims in Venezuela in Doubt After US Intervention</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:14</div>
+                <div class="time-ymd">01-05</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3625896773240067?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">前中金、甲骨文团队再创业，其AI智能自动化平台渗透三成央企，再获亿元融资 | 硬氪首发</div>
+                <div class="news-origin">前中金、甲骨文团队再创业，其AI智能自动化平台渗透三成央企，再获亿元融资 | 硬氪首发</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:46</div>
+                <div class="time-ymd">01-04</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3624605578675206?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">28岁拿下小红书开发者大会头奖，种子轮获真格投资｜硬氪首发</div>
+                <div class="news-origin">28岁拿下小红书开发者大会头奖，种子轮获真格投资｜硬氪首发</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:25</div>
+                <div class="time-ymd">01-04</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3624490892461057?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">华为云具身机器人负责人离职创业，想用脑认知“改造”机器人大脑丨智能涌现独家</div>
+                <div class="news-origin">华为云具身机器人负责人离职创业，想用脑认知“改造”机器人大脑丨智能涌现独家</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">14:29</div>
+                <div class="time-ymd">01-03</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-03/caracas-residents-report-loud-explosions-aircraft-overflying" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">加拉加斯居民报告发生巨大爆炸，飞机飞过上空</div>
+                <div class="news-origin">Caracas Residents Report Loud Explosions, Aircraft Overflying</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:39</div>
+                <div class="time-ymd">01-02</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-02/searching-for-the-limits-of-ai-optimism-in-2026" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">寻找 2026 年 AI 乐观的极限</div>
+                <div class="news-origin">Searching for the Limits of AI Optimism in 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:36</div>
+                <div class="time-ymd">01-02</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-02/ftse-100-hits-10-000-for-first-time-after-best-year-since-2009" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">富时 100 指数继 2009 年以来表现最好的一年后首次突破 10,000 点</div>
+                <div class="news-origin">FTSE 100 Hits 10,000 for First Time After Best Year Since 2009</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:17</div>
+                <div class="time-ymd">01-02</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-02/india-s-coal-supply-glut-forces-top-miner-to-explore-exports" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">印度煤炭供应过剩迫使顶级矿商探索出口</div>
+                <div class="news-origin">India’s Coal Supply Glut Forces Top Miner to Explore Exports</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">09:27</div>
+                <div class="time-ymd">01-02</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/videos/2026-01-02/the-gurus-promising-to-fix-india-s-small-businesses-video" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">专家承诺修复印度的小企业</div>
+                <div class="news-origin">The Gurus Promising to Fix India’s Small Businesses</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">21:00</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3620865484637190?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">36氪首发 | 消费科技品牌「xTool」递表港交所，腾讯领投 2 亿美元 Pre-IPO 融资</div>
+                <div class="news-origin">36氪首发 | 消费科技品牌「xTool」递表港交所，腾讯领投 2 亿美元 Pre-IPO 融资</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">20:02</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/newsletters/2026-01-01/the-us-eu-rift-over-social-media-rules-will-only-get-wider-in-2026" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">美欧围绕社交媒体规则的分歧到 2026 年只会进一步扩大</div>
+                <div class="news-origin">The US-EU Rift Over Social Media Rules Will Only Get Wider in 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:23</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/byd-sells-4-6-million-vehicles-in-2025-meets-revised-sales-goal" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">比亚迪2025年销售460万辆汽车，实现修订后的销售目标</div>
+                <div class="news-origin">BYD Sells 4.6 Million Vehicles in 2025, Meets Revised Sales Goal</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">19:00</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/podcast-these-are-the-etfs-to-watch-in-2026" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">这些是 2026 年值得关注的 ETF</div>
+                <div class="news-origin">These Are the ETFs to Watch in 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:35</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/pakistan-inflation-slows-more-than-expected-as-food-prices-ease" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">由于食品价格回落，巴基斯坦通胀放缓幅度超出预期</div>
+                <div class="news-origin">Pakistan Inflation Slows More Than Expected as Food Prices Ease</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">18:09</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/turkey-keeps-some-tax-hikes-modest-to-support-disinflation-drive" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">土耳其保持适度加税以支持通货紧缩</div>
+                <div class="news-origin">Turkey Keeps Some Tax Hikes Modest to Support Disinflation Drive</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:00</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/tracy-and-joe-answer-all-your-questions" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">特雷西和乔回答您所有的问题</div>
+                <div class="news-origin">Tracy and Joe Answer All Your Questions</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:00</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/tracy-and-joe-answer-all-your-questions" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">特雷西和乔回答您所有的问题</div>
+                <div class="news-origin">Tracy and Joe Answer All Your Questions</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">17:00</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/lagarde-says-bulgaria-joining-euro-is-powerful-symbol-for-europe" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">拉加德表示保加利亚加入欧元区是欧洲的强大象征</div>
+                <div class="news-origin">Lagarde Says Bulgaria Joining Euro Is Powerful Symbol for Europe</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">16:51</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/thailand-sees-annual-foreign-tourist-arrivals-slow-to-33-million" target="_blank" class="content-card">
+                <span class="source-badge">彭博经济</span>
+                <div class="news-title">泰国年度外国游客人数降至 3300 万人次</div>
+                <div class="news-origin">Thailand Sees Annual Foreign Tourist Arrivals Slow to 33 Million</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:54</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/indian-cigarette-maker-itc-slumps-after-india-raises-tobacco-tax" target="_blank" class="content-card">
+                <span class="source-badge">彭博市场</span>
+                <div class="news-title">印度最大卷烟制造商 ITC 因提高烟草税而暴跌</div>
+                <div class="news-origin">Largest Indian Cigarette Maker ITC Plunges on Higher Tobacco Tax</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">13:14</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2026-01-01/mamdani-takes-reins-of-new-york-city-after-historic-election-win" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">马姆达尼在历史性选举胜利后接管纽约市</div>
+                <div class="news-origin">Mamdani Takes Reins of New York City After Historic Election Win</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">12:09</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3620347860862209?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">摆脱“投流噩梦”，月之暗面的100亿元与杨植麟的信心</div>
+                <div class="news-origin">摆脱“投流噩梦”，月之暗面的100亿元与杨植麟的信心</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">11:06</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3620282777715970?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">盒马CEO发布内部信，2025年营收同比增速超40%</div>
+                <div class="news-origin">盒马CEO发布内部信，2025年营收同比增速超40%</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">10:44</div>
+                <div class="time-ymd">01-01</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2025/12/31/college-dropout-has-become-the-most-coveted-startup-founder-credential/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">“大学辍学生”已成为最令人垂涎​​的初创公司创始人证书</div>
+                <div class="news-origin">‘College dropout’ has become the most coveted startup founder credential</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">02:42</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://36kr.com/p/3619579802485766?f=rss" target="_blank" class="content-card">
+                <span class="source-badge">36氪</span>
+                <div class="news-title">滑跪送游戏的Epic Games，为什么是玩家们的“赛博E父”？</div>
+                <div class="news-origin">滑跪送游戏的Epic Games，为什么是玩家们的“赛博E父”？</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">02:29</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2025-12-31/europe-s-space-agency-says-cyber-incident-may-have-hit-servers" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">欧洲航天局称网络事件可能影响了服务器</div>
+                <div class="news-origin">Europe’s Space Agency Says Cyber Incident May Have Hit Servers</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">02:28</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2025-12-31/us-lifts-sanctions-on-trio-accused-of-work-on-predator-spyware" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">美国解除对被指控开发“Predator”间谍软件的三人的制裁</div>
+                <div class="news-origin">US Lifts Sanctions on Trio Accused of Work on ‘Predator’ Spyware</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">01:29</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://www.bloomberg.com/news/articles/2025-12-31/apollo-s-coinstar-repaying-debt-in-surprise-sale-to-alaska-buyer" target="_blank" class="content-card">
+                <span class="source-badge">彭博社</span>
+                <div class="news-title">Apollo 将把 Coinstar 出售给阿拉斯加买家，债券将被偿还</div>
+                <div class="news-origin">Apollo to Sell Coinstar to Alaska Buyer, Bonds Set to Be Repaid</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">00:40</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2025/12/31/investors-predict-ai-is-coming-for-labor-in-2026/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">投资者预测人工智能将于 2026 年进入劳动力市场</div>
+                <div class="news-origin">Investors predict AI is coming for labor in 2026</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">00:00</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2025/12/31/tade-oyerinde-and-teddy-solomon-talk-about-building-engaged-audiences-at-techcrunch-disrupt/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">Tade Oyerinde 和 Teddy Solomon 在 TechCrunch Disrupt 上谈论如何培养积极参与的受众</div>
+                <div class="news-origin">Tade Oyerinde and Teddy Solomon talk about building engaged audiences at TechCrunch Disrupt</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">00:00</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2025/12/31/these-are-the-best-gadgets-for-your-pet-right-now/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">这些是目前最适合您的宠物的小工具</div>
+                <div class="news-origin">These are the best gadgets for your pet right now</div>
+            </a>
+        </div>
+<div class="timeline-item">
+            <div class="time-box">
+                <div class="time-hm">23:05</div>
+                <div class="time-ymd">12-31</div>
+            </div>
+            <div class="dot"></div>
+            <a href="https://techcrunch.com/2025/12/31/every-fusion-startup-that-has-raised-over-100m/" target="_blank" class="content-card">
+                <span class="source-badge">TechCrunch</span>
+                <div class="news-title">每一家筹集超过 1 亿美元资金的融合初创公司</div>
+                <div class="news-origin">Every fusion startup that has raised over $100M</div>
+            </a>
+        </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; color: var(--text-sub); font-size: 0.8rem;">
+            —— End of Archive (Last 7 Days) ——
+        </div>
+    </div>
+</body>
+</html>

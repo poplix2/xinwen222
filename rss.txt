@@ -1,0 +1,7 @@
+https://feeds.bloomberg.com/markets/news.rss
+https://feeds.bloomberg.com/economics/news.rss
+https://cn.investing.com/rss/news_1.rss
+https://techcrunch.com/feed/
+https://feeds.bloomberg.com/technology/news.rss
+https://36kr.com/feed
+https://solidot.org.cn/index.rss

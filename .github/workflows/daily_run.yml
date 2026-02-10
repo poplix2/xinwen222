@@ -1,0 +1,55 @@
+name: News Monitor
+
+on:
+  schedule:
+    # ⚠️ 修改说明：
+    # UTC 0-12 点 对应 北京时间 08:00-20:00
+    # */30 代表每 30 分钟运行一次
+    - cron: '*/30 0-12 * * *'
+  workflow_dispatch:
+
+# 给 Actions 写入仓库的权限
+permissions:
+  contents: write
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          
+      # 💡 建议：加上缓存步骤，可以减少安装依赖的时间，节省 Actions 额度
+      - name: Cache pip packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+          
+      - name: Run Monitor
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+        run: python main.py
+
+      # 把修改后的 index.html 推送回仓库
+      - name: Commit and Push Archive
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          # 检查 index.html 是否有变化，有变化才提交
+          if [ -f index.html ]; then
+            git add index.html
+            git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update news archive" && git push)
+          else
+            echo "⚠️ index.html was not generated!"
+          fi
