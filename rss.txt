@@ -5,3 +5,12 @@ https://techcrunch.com/feed/
 https://feeds.bloomberg.com/technology/news.rss
 https://36kr.com/feed
 https://solidot.org.cn/index.rss
+# === 财经类 ===
+[https://feeds.bloomberg.com/markets/news.rss](https://feeds.bloomberg.com/markets/news.rss)      # 彭博市场
+[https://feeds.bloomberg.com/economics/news.rss](https://feeds.bloomberg.com/economics/news.rss)    # 彭博经济
+[https://cn.investing.com/rss/news_1.rss](https://cn.investing.com/rss/news_1.rss)           # 英为财情
+
+# === 科技类 ===
+[https://techcrunch.com/feed/](https://techcrunch.com/feed/)                      # TechCrunch (全球科技风向)
+[https://36kr.com/feed](https://36kr.com/feed)                             # 36氪 (创投)
+[https://www.theverge.com/rss/index.xml](https://www.theverge.com/rss/index.xml)            # The Verge (数码/文化)
